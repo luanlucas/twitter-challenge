@@ -1,0 +1,10 @@
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
