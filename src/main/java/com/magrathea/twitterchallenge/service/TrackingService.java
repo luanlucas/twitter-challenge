@@ -20,7 +20,7 @@ public class TrackingService {
 	private final TrackingRepository trackingRepository;
 	
 	public Tracking follow(final String keyword) {
-		this.validateTrackingMessage(keyword);
+		this.validateTrackingKeyword(keyword);
 		
 		return this.save(keyword);
 	}
@@ -33,7 +33,7 @@ public class TrackingService {
 	}
 	
 	public void unfollow(final String keyword) {
-		this.validateTrackingMessage(keyword);
+		this.validateTrackingKeyword(keyword);
 		
 		this.delete(keyword);
 	}
@@ -44,7 +44,7 @@ public class TrackingService {
 		this.trackingRepository.delete(tracking);
 	}
 	
-	private void validateTrackingMessage(final String keyword) {
+	private void validateTrackingKeyword(final String keyword) {
 		this.validateEmpty(keyword);
 		this.validateIdentifier(keyword);
 	}

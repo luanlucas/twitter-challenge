@@ -12,7 +12,7 @@ import com.magrathea.twitterchallenge.service.TrackingService;
 
 @RestController
 @RequestMapping("/v1/trackings")
-public class TrackController {
+public class TrackingController {
 
 	@Autowired
 	private TrackingService trackingService;

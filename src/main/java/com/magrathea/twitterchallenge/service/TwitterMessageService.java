@@ -33,7 +33,6 @@ public class TwitterMessageService {
 		
 		try {
 			do {
-				// TODO Tratar quantidade maxima de caracteres
 				queryResult = this.twitter.search(query);
 				this.addTwitterMessages(twitterMessages, queryResult);
 				query = queryResult.nextQuery();
@@ -50,7 +49,7 @@ public class TwitterMessageService {
 		return TwitterQueryConverter.convertWithOrClause(keywords);
 	}
 	
-	private void addTwitterMessages(final Set<TwitterMessage> twitterMessages, QueryResult queryResult) {
+	private void addTwitterMessages(final Set<TwitterMessage> twitterMessages, final QueryResult queryResult) {
 		final List<Status> tweets = queryResult.getTweets();
 		final List<TwitterMessage> messages = TwitterMessageConverter.convert(tweets);
 		twitterMessages.addAll(messages);
